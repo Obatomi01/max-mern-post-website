@@ -7,11 +7,11 @@ const isAuth = require('../middleware/is-auth');
 const router = express.Router();
 
 // GET '/feed/posts'
-router.get('/posts', isAuth, feedControllers.getPosts);
+router.get('/posts', feedControllers.getPosts);
 
 router.post(
   '/post',
-  isAuth,
+
   [
     body('title').trim().isLength({ min: 5 }),
     body('content').trim().isLength({ min: 5 }),
@@ -19,11 +19,11 @@ router.post(
   feedControllers.createPost
 );
 
-router.get('/post/:postId', isAuth, feedControllers.getPost);
+router.get('/post/:postId', feedControllers.getPost);
 
 router.put(
   '/post/:postId',
-  isAuth,
+
   [
     body('title').trim().isLength({ min: 5 }),
     body('content').trim().isLength({ min: 5 }),
@@ -31,6 +31,6 @@ router.put(
   feedControllers.updatePost
 );
 
-router.delete('/post/:postId', isAuth, feedControllers.deletePost);
+router.delete('/post/:postId', feedControllers.deletePost);
 
 module.exports = router;

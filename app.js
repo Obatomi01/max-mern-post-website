@@ -61,7 +61,9 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.m75ia3o.mongodb.net/${process.env.MONGO_FILE}?retryWrites=true&w=majority`
+    `mongodb+srv://eniolaoba9:passworded@cluster0.m75ia3o.mongodb.net/messages?retryWrites=true&w=majority`
   )
-  .then((result) => app.listen(8080))
-  .catch((err) => console.log(err));
+  .then((result) => {
+    app.listen(8080);
+  })
+  .catch((err) => console.log('error', err));
