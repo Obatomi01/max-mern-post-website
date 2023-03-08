@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 const multer = require('multer');
 
-const feedRoutes = require('./routes/feed');
-const authRoutes = require('./routes/auth');
+const feedRoutes = require('./src/routes/feed');
+const authRoutes = require('./src/routes/auth');
 
 const app = express();
 
